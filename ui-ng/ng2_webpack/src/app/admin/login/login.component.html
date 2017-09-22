@@ -1,0 +1,12 @@
+<h1>Login Up Page</h1>
+<div ng-app="myApp" ng-controller="formCtrl">
+    <form>
+      <input type="email" name = "email" [(ngModel)] ="email" required placeholder="Enter Email" #em="ngModel"/><br>
+      <input type="password" name = "password1" [(ngModel)]="password1" required   placeholder="Enter passowrd" #pwd1="ngModel"/>
+      <br><br>
+      <div *ngIf="passwordFail">Password do not match.</div>
+      <button (click)="signUp()">Sign Up</button>
+      <button (click)="login()">Login</button>
+      <button (click)="cancel()">Cancel</button>
+    </form>
+  </div>

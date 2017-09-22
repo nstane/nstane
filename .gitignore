@@ -1,0 +1,7 @@
+/java/*/.classpath
+/java/*/.project
+/java/*/.settings/
+/java/*/target/
+/java/*/*.class
+/java/*/lib/
+/ui-ng/ng2_webpack/node_modules/

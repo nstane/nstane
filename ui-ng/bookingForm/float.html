@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+    float: right;
+}
+
+div#test span { color: green; }
+div span { color: blue ;}
+span { color: red }
+
+#main #mast-fixed {
+   background:green;
+}
+div#main .mast-head {
+    background-color: red !important;
+}
+
+body h1 {
+  color: green;
+}
+
+html h1 {
+  color: purple;
+}
+
+div.static {
+    position: static;
+    border: 3px solid #73AD21;
+}
+
+div.relative {
+    position: relative;
+    left: 30px;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
+
+div.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+
+div.fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+}
+
+</style>
+</head>
+<body>
+<hr/><div style="text-align:center">Float</div><hr/>
+<p>In the paragraph below, we have added an image with style <b>float:right</b>. The result is that the image will float to the right in the paragraph.</p>
+<p>
+<img src="images/5.jpg" width="95" height="84" />
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+</p>
+
+</br>
+<hr/><div style="text-align:center">CSS Specificity</div><hr/>
+<div id="test">
+	<span>Text</span>
+</div>
+
+<div>
+	<span>Text</span>
+</div>
+
+<div id="main">
+	<div id="mast-fixed" class="mast-head" >hello</div>
+</div>
+
+<h1> I am H1 </h1>
+
+<hr/><div style="text-align:center">Element Positioning</div><hr/>
+
+<div class="static">
+This div element has position: static;
+</div>
+<br>
+
+<div class="relative">
+This div element has position: relative;
+</div>
+<br>
+
+<div class="relative">This div element has position: relative;
+  <div class="absolute">This div element has position: absolute;</div>
+</div>
+<br>
+
+<div class="fixed">
+This div element has position: fixed;
+</div>
+<br>
+
+</body>
+</html>
