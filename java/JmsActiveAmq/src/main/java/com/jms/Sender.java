@@ -20,7 +20,7 @@ public class Sender {
 	public Sender(JmsTemplate jmsTemplate) {
 		this.jmsTemplate = jmsTemplate;
 	}
-	
+	//Send msg to spring starter applicaiton
 	@GetMapping(name = "/")
 	public void send(){
 		 // Send a message with a POJO - the template reuse the message converter
