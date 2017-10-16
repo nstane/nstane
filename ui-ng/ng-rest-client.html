@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+	<div ng-app="myApp" ng-controller="myCtrl">
+
+		<form>
+			<div>
+				Http Method <select ng-model="method">
+					<option value="GET">Get</option>
+					<option value="POST">Post</option>
+				</select>
+				Content Type <select ng-model="contentType">
+					<option value="">NA</option>
+					<option value="application/json">JSON</option>
+				</select>
+				Accept <select ng-model="accept">
+					<option value="">NA</option>
+					<option value="application/json">JSON</option>
+				</select>
+			</div>
+			<div>
+				<input type="text" ng-model="baseUrl" placeholder="Base URL">
+			</div>
+			<div>
+				<input type="text" ng-model="endpoint" placeholder="End Point">
+			</div>
+			<div>
+				<textarea cols="70" rows="15" ng-model="request"
+					placeholder="Request String"></textarea>
+				<textarea cols="70" readonly rows="15" ng-model="response"
+					placeholder="Response String"></textarea>
+			</div>
+			<div>
+				<button ng-click="callApi()">Submit</button>
+			</div>
+		</form>
+	</div>
+
+
+	<script>
+		var app = angular.module('myApp', []);
+		
+		app.controller('myCtrl', function($scope, $http) {
+			$scope.method = "GET";
+			$scope.baseUrl = '';
+			$scope.endPoint = '';
+			$scope.request = '';
+			$scope.response = '';
+			$scope.contentType = '';
+			$scope.accept = '';
+			
+			$scope.callApi = function(){
+				let url = $scope.baseUrl+$scope.endPoint;
+				let req = {};
+				if($scope.method == 'GET'){
+					req = {
+							 method: $scope.method,
+							 url: url
+					}
+				}else if($scope.method == 'POST'){
+					req = {
+							 method: $scope.method,
+							 url: url,
+							 headers: {
+							   'Content-Type': $scope.contentType,
+							   'Accept' : $scope.accept
+							 },
+							 data: $scope.request
+					}
+				}
+				console.log('Request Data '+JSON.stringify(req));
+				$http(req).then(
+						function(response) {
+							$scope.response = JSON.stringify(response.data);
+						}, function(response) {
+							$scope.response = "Something went wrong";
+				});
+			}
+			
+		});
+	</script>
+</body>
+</html>
