@@ -1,0 +1,6 @@
+install web pack
+
+
+install ts compiler
+
+npm install awesome-typescript-loader source-map-loader

@@ -5,3 +5,6 @@
 /java/*/*.class
 /java/*/lib/
 /ui-ng/ng2_webpack/node_modules/
+/ui-ng/swagger/demo/node_modules/
+/ui-ng/webpack/node_modules/
+/ui-ng/learn-node/node_modules/
