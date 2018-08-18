@@ -8,3 +8,4 @@
 /ui-ng/swagger/demo/node_modules/
 /ui-ng/webpack/node_modules/
 /ui-ng/learn-node/node_modules/
+.DS_Store
