@@ -4,6 +4,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.ns.yamlreader.config.YamlConfigurationPool;
 import com.ns.yamlreader.reader.DevYamlReader;
+import com.ns.yamlreader.reader.IntYamlReader;
+import com.ns.yamlreader.reader.ProdYamlReader;
+import com.ns.yamlreader.reader.TestYamlReader;
 import com.ns.yamlreader.reader.YamlReader;
 
 public class Main {
@@ -32,11 +35,11 @@ public class Main {
 		case DEV:
 			return new DevYamlReader();
 		case TEST:
-			return new DevYamlReader();
+			return new TestYamlReader();
 		case INT:
-			return new DevYamlReader();
+			return new IntYamlReader();
 		case PROD:
-			return new DevYamlReader();
+			return new ProdYamlReader();
 		default:
 			return null;
 		}

@@ -1,0 +1,40 @@
+appName: investigo
+staticValues:
+    bdOverride: true
+    pkiEncryption: false
+    issuer: Cetera_issuer
+    samlVersion: 2
+    signSamlAssertion: true
+    assertionEncryption: false
+    keystoreFilename: /keystore/yodlee.jks
+    keystoreAlias: 1
+    keystorePassword: sapient
+    signSamlResponse: false
+    ssoAttribKey: ""
+    encryptionMechanism: ""
+    audiences: www.yodlee.com
+    samlInvalidAfterMinutes: 5
+    keystoreHelper: KeystoreHelper
+    attributes:
+        personId: ppid
+        appId: appid
+        customerId: custid
+        accountName: accountName
+dynamicValues:
+    destinationEndPoint: '${destinationEndPoint}'
+    recipientURL: '${recipientURL}'
+bdOverride:
+    CAN:
+        pkiEncryption: true
+        issuer: Cetera_CAN_issuer
+        keystorePassword: sapient123
+        signSamlResponse: false
+        attributes:
+            personId: ppid
+            appId: appid
+            customerId: custid
+    CIS:
+        pkiEncryption: true
+        issuer: Cetera_CIS_issuer
+        keystorePassword: sapient1234
+        signSamlResponse: true
