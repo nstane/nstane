@@ -33,7 +33,7 @@ class UserComponent implements CommandLineRunner {
 		System.out.println("Application Started");
 		System.out.println(env.getProperty("destinationEndPoint"));
 		
-		AppConfiguration appConfig = appConfigBuilder.getAppConfiguration(BDType.CAN);
+		AppConfiguration appConfig = appConfigBuilder.getAppConfiguration(BDType.CIS);
 		System.out.println(appConfig.isBdOverride());
 
 	}

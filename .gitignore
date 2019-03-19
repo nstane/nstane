@@ -9,3 +9,10 @@
 /ui-ng/webpack/node_modules/
 /ui-ng/learn-node/node_modules/
 .DS_Store
+*.jar
+*.jar
+*.jar
+*.jar
+kotlin/hello-kotlin/.mvn/wrapper/maven-wrapper.jar
+kotlin/hello-kotlin/.mvn/wrapper/maven-wrapper.properties
+java/auth2/.mvn/wrapper/maven-wrapper.jar
