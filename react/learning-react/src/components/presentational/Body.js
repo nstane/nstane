@@ -1,5 +1,6 @@
 import React from 'react';
 import DivItems from './DivItems'
+import store from '../../stores/Store'
 //import {createReactClass} from 'create-react-class';
 
 
@@ -29,6 +30,7 @@ const Body = (props) => {
         */
     const {listRef} = props;
     const ids = ['a', 'b', 'c', 'id']
+    console.log(store._items);
     return(
         <div ref = {listRef}>
             <DivItems divIds = {ids}></DivItems>

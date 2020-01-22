@@ -1,31 +1,38 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import '../../styles/App.css';
-import {onClickScrollToTarget} from '../../helpers/Helper'
+import {onClickScrollToTarget, StickyHelper} from '../../helpers/Helper'
 
-const StickyBar = props => {
-    const {price, refElement} = props;
-    const onClick = ()=> {onClickScrollToTarget(refElement)};
-    return(
+class StickyBar extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {stickyhide: true};
+        this.stickyHelper = StickyHelper(this);
+    }
+
+    componentDidMount(){
+        this.stickyHelper.resisterScrollEvent()
+    }
+
+    componentWillUnmount() {
+        this.stickyHelper.unResisterScrollEvent();
+    }
+
+    onClick(){
+        onClickScrollToTarget(this.props.refElement)
+    }
+
+    render() {
+        return(
         <div>
             <div className="Sticky">
                 <div className="left StickyContent">
-                    {price}
+                    {this.props.price}
                 </div>
                 <div className="right StickyContent">
-                    <button onClick= {onClick}>Chek Availibility</button>
+                    <button onClick= {this.onClick}>Chek Availibility</button>
                 </div>
             </div>
         </div>
-    )
-}
-
-StickyBar.prototype = {
-    price : PropTypes.string.required,
-    refElement : PropTypes.object.required
-}
-
-StickyBar.defaultProps = {
-    price : '90' 
+    )}
 }
 export default StickyBar;
