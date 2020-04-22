@@ -3,8 +3,6 @@ import logo from './logo.svg';
 import './styles/App.css';
 import StickyBar from './components/presentational/StickyBar';
 import Body from './components/presentational/Body'
-import {StickyHelper} from './helpers/Helper'
-
 import Container from './components/container/Container'
 
 class App extends React.Component {
@@ -12,19 +10,24 @@ class App extends React.Component {
   listReference;
   constructor(props) {
     super(props);
-    this.stickyHelper = StickyHelper(this);
-    this.state = {stickyhide: false};
     this.updateStickyProps = this.updateStickyProps.bind(this);
     console.log('App.constructor');
   }
 
   updateStickyProps(el) { 
     this.listReference = el;
-    this.setState({stickyhide: true});
-    this.stickyHelper.resisterScrollEvent()
   }
 
   componentWillMount() {
+    const evtSource = new EventSource("http://localhost:8080/api/user");
+
+    evtSource.onmessage = function(event) {
+      console.log(event.data);
+    };
+
+    evtSource.onerror = function(err) {
+      console.error("EventSource failed:", err);
+    };
     console.log('App.componentWillMount');
   }
   
@@ -34,7 +37,7 @@ class App extends React.Component {
 
   componentWillUnmount() {
     console.log('App.componentWillUnmount')
-    this.stickyHelper.unResisterScrollEvent();
+    //this.stickyHelper.unResisterScrollEvent();
   }
 
   componentWillReceiveProps(nextProps) {
@@ -57,7 +60,6 @@ class App extends React.Component {
   render(){
     console.log('App.render');
     const element = <div>{this.props.children}</div>;
-    const stickyModel = {price : "123.11", refElement :this.listReference}
   return (
     <div className="App">
       <header className="App-header">
@@ -66,8 +68,8 @@ class App extends React.Component {
           Sticky Bar Demo
         </h1>
       </header>
-      {this.state.stickyhide ? <StickyBar {...stickyModel}></StickyBar> : null}
       <Body listRef = {this.updateStickyProps}/>
+        <StickyBar price = {"123.11"} refElement = {this.listReference}></StickyBar>
       {element}
 
       <Container/>

@@ -1,4 +1,4 @@
-export const onClickScrollToTarget = (refElement: HTMLElement) => {
+export const onClickScrollToTarget = (refElement) => {
     if (refElement && typeof refElement.scrollIntoView === 'function') {
       refElement.scrollIntoView({
         block: 'start',
@@ -10,7 +10,7 @@ export const onClickScrollToTarget = (refElement: HTMLElement) => {
 export const StickyHelper = (context) => {
   let scrolEvent = undefined;
   return {
-    resisterScrollEvent : () => {
+      resisterScrollEvent : () => {
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
        scrolEvent = (event) => {
          if(context.listReference) {
