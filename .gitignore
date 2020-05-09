@@ -6,6 +6,7 @@
 /java/*/target/
 /java/*/*.class
 /java/*/lib/
+java/simple/.idea/**
 /ui-ng/ng2_webpack/node_modules/
 /ui-ng/swagger/demo/node_modules/
 /ui-ng/webpack/node_modules/
@@ -28,3 +29,23 @@ java/auth2/.mvn/wrapper/maven-wrapper.jar
 /kotlin/*/.settings/
 /kotlin/*/target/
 /kotlin/*/*.class
+/java/simple/kotlin-basics & DS.iml
+/java/auth2/.mvn/
+/java/auth2/.mvn/wrapper/maven-wrapper.jar
+/java/java8/
+/java/sadp-concurrency/.idea/
+/java/sadp-concurrency/sadp-concurrency.iml
+/java/sadpHibernate/.idea/
+/java/sadpHibernate/sadpHibernate.iml
+/java/simple/src/test/Test
+/java/tollStationApp/config-client/.mvn/
+/java/tollStationApp/config-client/mvnw
+/java/tollStationApp/config-server/.mvn/
+/java/tollStationApp/microservices/.mvn/
+/java/tollStationApp/tollprocess-task-intake/.mvn/
+/java/tollStationApp/tollprocess-task-sink/.mvn/
+/java/tollStationApp/tollprocess-task/.mvn/
+/java/yamlReader/.mvn/
+/kotlin/hello-kotlin/.mvn/
+/java/simple/kotlin-basics & DS.iml
+/java/simple/.idea/
