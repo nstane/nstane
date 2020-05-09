@@ -4,10 +4,7 @@ public class TwoThreadPingPong {
     public static void main (String[] args) {
         Object monitor = new Object();
 
-        //Ping ping = new Ping(monitor);
-        //Pong pong = new Pong(monitor);
-
-        Thread t1 = new Thread(() -> {
+        Runnable ping = () -> {
             while(true) {
                 synchronized(monitor) {
                     try {
@@ -20,9 +17,9 @@ public class TwoThreadPingPong {
                     }
                 }
             }
-        });
+        };
 
-        Thread t2 = new Thread(() -> {
+        Runnable pong = () -> {
             while(true) {
                 synchronized(monitor) {
                     try {
@@ -35,7 +32,11 @@ public class TwoThreadPingPong {
                     }
                 }
             }
-        });
+        };
+
+        Thread t1 = new Thread(ping);
+
+        Thread t2 = new Thread(pong);
 
         t1.start();
 
