@@ -1,5 +1,7 @@
 /java/*/.classpath
 /java/*/.project
+/java/*/mvnw
+/java/*/mvnw.cmd
 /java/*/.settings/
 /java/*/target/
 /java/*/*.class
@@ -16,3 +18,13 @@
 kotlin/hello-kotlin/.mvn/wrapper/maven-wrapper.jar
 kotlin/hello-kotlin/.mvn/wrapper/maven-wrapper.properties
 java/auth2/.mvn/wrapper/maven-wrapper.jar
+/.idea/
+/kotlin/.idea/
+
+/kotlin/*/.classpath
+/kotlin/*/.project
+/kotlin/*/mvnw
+/kotlin/*/mvnw.cmd
+/kotlin/*/.settings/
+/kotlin/*/target/
+/kotlin/*/*.class

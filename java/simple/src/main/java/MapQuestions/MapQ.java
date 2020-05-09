@@ -1,8 +1,7 @@
 package MapQuestions;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.*;
 
 import static java.lang.System.out;
 
@@ -16,20 +15,39 @@ public class MapQ {
         }
     }
     public static void main(String[] args) {
+        treeMap();
+        //run();
+    }
 
-        run();
+    /**
+     * Object/class to be added in tree set or map should implements Comparable
+     */
+    private static void treeMap() {
+        Address address = new Address("","","");
+        TreeSet<Employee> set = new TreeSet<>();
+        set.add(new Employee("Narender", 123, LocalDate.now().minusYears(1), address));
+        set.add(new Employee("Akshay", 788, LocalDate.now().minusYears(2), address));
+        set.add(new Employee("Harry", 12333, LocalDate.now().minusYears(1), address));
+        set.add(new Employee("Nainu", 4356, LocalDate.now().minusYears(5), address));
+        set.add(new Employee("Sita", 676, LocalDate.now().minusYears(7), address));
+        set.add(new Employee("Ram", 34324, LocalDate.now().minusYears(1), address));
+        out.println(set);
     }
 
     private static void run() {
-        Map<Employee, String> map = new HashMap();
+        Address address = new Address("", "", "");
+        Map<Employee, Employee> map = new HashMap();
 
-        Employee employee = new Employee("Narender", 123);
+        Employee employee = new Employee("Narender", 123, LocalDate.now().minusYears(1), address);
 
-        Employee employee2 = new Employee("Narender", 123);
+        Employee employee2 = new Employee("Narender", 123, LocalDate.now().minusYears(1), address);
 
-        map.put(employee, "Narender");
+        map.put(employee, employee);
 
         out.println(map.get(employee2));
+
+
+        //employee.getJoiningDate().plusYears(2);
 
         /*
         if don't implement hashCode this will return null
@@ -41,7 +59,8 @@ public class MapQ {
         not if equals always true and hasCode == 1 return same then it will keep override element.
         */
 
-        map.put(employee2, "Narender");
+        map.put(employee2, employee2);
+
 
         out.println(employee.hashCode() ==employee2.hashCode());
 
@@ -51,36 +70,10 @@ public class MapQ {
 
         out.println(Objects.equals(employee, employee2));
 
-        out.println(Objects.deepEquals(employee, new Employee("ttt", 2222)));
+        out.println(Objects.deepEquals(employee, new Employee("ttt", 2222, LocalDate.now().minusYears(2), address)));
 
         out.println(Objects.equals(Integer.valueOf(12), Integer.valueOf(122)));
 
-        out.println(Objects.deepEquals(employee, new Employee("ttt", 2222)));
-    }
-}
-
-class Employee {
-    private final String name;
-    private final double salary;
-    public Employee(final String name, final int salary) {
-        this.name = name;
-        this.salary = salary;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        /*if (this == o) return true;
-        if (!(o instanceof Employee)) return false;
-        Employee employee = (Employee) o;
-        return Double.compare(employee.salary, salary) == 0 &&
-                Objects.equals(name, employee.name);*/
-
-        return true;
-        // map or set will size of one if equals return always true and hashCode return same hash always
-    }
-
-    @Override
-    public int hashCode() {
-        return 1;//Objects.hash(name, salary);
+        out.println(Objects.deepEquals(employee, new Employee("ttt", 2222, LocalDate.now().minusYears(2), address)));
     }
 }

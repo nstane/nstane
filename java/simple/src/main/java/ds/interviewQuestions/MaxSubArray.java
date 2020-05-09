@@ -16,23 +16,25 @@ public class MaxSubArray {
 
         int g[] = {2, 3, 4, 5, 7}; //21
 
-        maxSubArray(g);
+        maxSubArray(c);
     }
 
     private static void maxSubArray(int[] a) {
-        int ans = 0, sum=0;
-        for(int i = 0; i<a.length;i++) {
-
-            if(sum+a[i] > 0) {
-                sum += a[i];
-                System.out.println(a[i]);
-            } else  {
-                sum = 0;
-            }
-            ans = Math.max(ans, sum);
+        int max = 0, sum=0;
+        for(int i :a) {
+            sum = Math.max(sum+i, 0);
+            max = Math.max(max, sum);
         }
 
         System.out.println("Max sum sub array : ");
-        System.out.println(ans);
+        System.out.println(max);
+    }
+
+    private static void maxSubArrayNegatives(int[] a) {
+        int max = 0, sum = 0;
+        for (int i : a) {
+            sum = Math.max(sum + i, 0);
+            max = Math.max(max, sum);
+        }
     }
 }

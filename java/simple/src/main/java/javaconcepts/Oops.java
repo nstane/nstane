@@ -1,3 +1,4 @@
+package javaconcepts;
 
 import javax.naming.MalformedLinkException;
 import java.util.function.BinaryOperator;
@@ -16,6 +17,15 @@ public class Oops {
 
         out.println(aa);
         out.println(bb);
+
+        try {
+            // Exception in catch should be added in hierarchical order otherwise it will throw compile time exception
+            // e.g. RuntimeException or Any Child of Exception is not allowed to be added after Exception
+        } catch (ArrayIndexOutOfBoundsException exp) {
+
+        } catch (Exception e) {
+
+        }
     }
 }
 
@@ -23,7 +33,7 @@ public class Oops {
 interface One {
     void a();
     default void call() {
-        out.println("calling One");
+        out.println("calling javaconcepts.One");
     }
 }
 
@@ -31,7 +41,7 @@ interface Two {
     void a();
 
     default void call() {
-        out.println("calling Two");
+        out.println("calling javaconcepts.Two");
     }
 }
 
@@ -39,14 +49,14 @@ interface Three {
     void a();
 
     default void call() {
-        out.println("calling Three");
+        out.println("calling javaconcepts.Three");
     }
 }
 
 class Base implements One, Two{
 
     public Base() {
-        // Note :  when we create Base c = new Other() this will call doSomething() of other and that is bad because it wil possible we can pass
+        // Note :  when we create javaconcepts.Base c = new javaconcepts.Other() this will call doSomething() of other and that is bad because it wil possible we can pass
         // this some where from here before object complete initialize
         doSomething();
     }
@@ -60,7 +70,7 @@ class Base implements One, Two{
 
     @Override
     public void a() {
-        out.println("calling a of Base");
+        out.println("calling a of javaconcepts.Base");
     }
 
     @Override
@@ -88,7 +98,7 @@ class Other extends Base{
     }
 
     @Override
-    protected String callWithUncheckedException(Function function) throws ArrayIndexOutOfBoundsException {
+    protected String callWithUncheckedException(Function function) throws RuntimeException {
         return (String) function.apply("a");
     }
 
@@ -113,7 +123,7 @@ class Other extends Base{
 1. Use immutable object or implement hashcode and equals method when we use hash based collection
 otherwise we can end up in memory leaks.
 
-2. One may call System.gc() when profiling an application to search for possible memory leaks.
+2. javaconcepts.One may call System.gc() when profiling an application to search for possible memory leaks.
 All the profilers call this method just before taking a memory snapshot.
 
 3. Integer)128 == (Integer)128 is `false`

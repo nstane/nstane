@@ -13,6 +13,11 @@ fun <T> inOrder(node: SampleTree<T>?) {
     inOrder(node.right)
 }
 
+/*fun height(root: SampleIntTree): Int {
+    if(root == null) 0
+    else Math.max(root?.left?.let { height(it) }?.toInt(), root?.right?: null?.let { height(it) }?.toInt())+1
+}*/
+
 fun inOrderIntTree(node: SampleIntTree?) {
     if(node == null) return
     inOrderIntTree(node?.left)
@@ -48,9 +53,16 @@ fun insert(root: SampleIntTree?, node: SampleIntTree): SampleIntTree {
 
 fun main(args: Array<String>) {
     //println(isSameTree(null, null))
-    val tree1 = SampleTree(123,
-            left = SampleTree(122),
-            right=SampleTree(124)
+    val tree1 = SampleTree(
+            data = 123,
+            left = SampleTree(
+                    data = 122,
+                    left = SampleTree(120),
+                    right = SampleTree(121)
+            ),
+            right=SampleTree(
+                    data = 124
+            )
     )
     val tree2 = SampleTree(90, SampleTree(122), SampleTree(124))
     println("print tree 1 in order")

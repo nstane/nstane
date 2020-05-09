@@ -4,7 +4,9 @@ import java.util.stream.IntStream;
 
 import static java.lang.System.out;
 
-public class CallThreadABeforeOthers {
+public class
+
+CallThreadABeforeOthers {
     public static void main(String[] args) throws InterruptedException {
         IntStream.rangeClosed(1, 10).forEach(
                 i -> {
