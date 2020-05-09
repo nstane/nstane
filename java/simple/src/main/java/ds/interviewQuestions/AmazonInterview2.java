@@ -15,7 +15,7 @@ public class AmazonInterview2 {
                 "warcraft is dangeroud game for kids"
         );
 
-        System.out.println(run(6, 2, toyNames, quotes));
+        //System.out.println(run(6, 2, toyNames, quotes));
         System.out.println(popularNToys(6, 2, 6, toyNames, quotes));
     }
 

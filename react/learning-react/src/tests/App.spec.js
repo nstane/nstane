@@ -7,5 +7,6 @@ describe("<App/>",()=>{
     it('should update offerListOffsetTop', () => {
         const app = new App({});
         
+        
       });
 })
