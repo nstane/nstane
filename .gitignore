@@ -31,7 +31,6 @@ java/auth2/.mvn/wrapper/maven-wrapper.jar
 /kotlin/*/*.class
 /java/simple/kotlin-basics & DS.iml
 /java/auth2/.mvn/
-/java/auth2/.mvn/wrapper/maven-wrapper.jar
 /java/java8/
 /java/sadp-concurrency/.idea/
 /java/sadp-concurrency/sadp-concurrency.iml
@@ -45,7 +44,16 @@ java/auth2/.mvn/wrapper/maven-wrapper.jar
 /java/tollStationApp/tollprocess-task-intake/.mvn/
 /java/tollStationApp/tollprocess-task-sink/.mvn/
 /java/tollStationApp/tollprocess-task/.mvn/
+/java/tollStationApp/.idea/
 /java/yamlReader/.mvn/
 /kotlin/hello-kotlin/.mvn/
 /java/simple/kotlin-basics & DS.iml
 /java/simple/.idea/
+/java/userapi_ratelimit/.mvn/
+/java/userapi_ratelimit/.idea/
+/java/userapi_ratelimit/target/
+
+/java/userapi_ratelimit/HELP.md/
+/java/userapi_ratelimit/mvnw/
+/java/userapi_ratelimit/mvnw.cmd/
+/java/userapi_ratelimit/userapi.iml/

@@ -8,8 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.web.bind.annotation.*
 
 
-@RestController
-@RequestMapping("/api/user")
+@RestController("/api/user")
 class UserController(
         @Autowired val passwordEncoder: PasswordEncoder,
         @Autowired val userDetailsService: LocalUserDetailsService

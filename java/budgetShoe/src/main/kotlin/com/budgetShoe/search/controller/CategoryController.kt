@@ -6,8 +6,7 @@ import com.budgetShoe.search.service.CategoryService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
-@RestController
-@RequestMapping("/api/category")
+@RestController("/api/category")
 class CategoryController(@Autowired val categoryService: CategoryService) {
 
     @GetMapping("/{id}")
