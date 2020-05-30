@@ -1,6 +1,7 @@
 package javaconcepts;
 
 import javax.naming.MalformedLinkException;
+import java.net.MalformedURLException;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import static java.lang.System.out;
@@ -64,7 +65,7 @@ class Base implements One, Two{
         return (String) function.apply("a");
     }
 
-    public String callWithCheckedException(Function function) throws MalformedLinkException {
+    public String callWithCheckedException(Function function) throws MalformedURLException  {
         return (String) function.apply("a");
     }
 
@@ -98,7 +99,7 @@ class Other extends Base{
     }
 
     @Override
-    protected String callWithUncheckedException(Function function) throws RuntimeException {
+    protected String callWithUncheckedException(Function function) {
         return (String) function.apply("a");
     }
 
@@ -109,7 +110,7 @@ class Other extends Base{
      * @throws Exception
      */
     @Override
-    public String callWithCheckedException(Function function) throws MalformedLinkException {
+    public String callWithCheckedException(Function function) {
         return (String) function.apply("a");
     }
 

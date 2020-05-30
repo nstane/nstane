@@ -31,6 +31,7 @@ public class Utils {
         if (rateLimit.isPresent() && rateLimit.get().getLimit() > 0) {
             limit = rateLimit.get().getLimit();
         }
+
         return limit;
     }
 
@@ -38,7 +39,8 @@ public class Utils {
         return limit == valueStore.getCurrentLimit();
     }
 
-    public static boolean isResetRateLimit(final long currentTime, final ValueStore valueStore, TimeSpan timespan) {
+    public static boolean
+    isResetRateLimit(final long currentTime, final ValueStore valueStore, TimeSpan timespan) {
         long timeDifference = currentTime - valueStore.getInitTimeInMillis();
 
         return timeDifference > timespan.getTimeSpanValueInMills();

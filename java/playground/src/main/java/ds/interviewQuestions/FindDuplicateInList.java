@@ -4,7 +4,8 @@ class FindDuplicateInList {
     public static void main(String... a) {
         int arr[] = {1, 4, 5, 6, 7, 7, 2, 4, 9, 5,555,9};
         System.out.println("print duplicate");
-        printDuplicate(arr);
+        //printDuplicate(arr);
+        printDuplicate2(arr);
         System.out.println("remove duplicate");
         removeDuplicate(arr);
     }
@@ -29,6 +30,17 @@ class FindDuplicateInList {
                 if(arr[i] == arr[j]){
                     System.out.println(arr[j]);
                 }
+            }
+        }
+    }
+
+    private static  void printDuplicate2(int arr[]) {
+        int a[] = new int[1000];
+        for (int i = 0; i < arr.length; i++) {
+            if(a[arr[i]] == 1) {
+                System.out.println("Found duplicate "+arr[i]);
+            } else  {
+                a[arr[i]]++;
             }
         }
     }

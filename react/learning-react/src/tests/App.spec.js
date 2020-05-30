@@ -3,7 +3,7 @@ import { isTSAnyKeyword } from '@babel/types';
 import App from '../App';
 
 
-describe("<App/>",()=>{
+describe("<App/>", () => {
     it('should update offerListOffsetTop', () => {
         const app = new App({});
         

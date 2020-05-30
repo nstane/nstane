@@ -3,7 +3,7 @@ package threads;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-public class CyclicBarrierExample implements Runnable{
+public class CyclicBarrierExample implements Runnable {
     CyclicBarrier cb;
     int a, b, c;
     public CyclicBarrierExample(CyclicBarrier cb) {

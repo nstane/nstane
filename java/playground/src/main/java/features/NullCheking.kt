@@ -20,7 +20,7 @@ fun main(a: Array<String>) {
 
     //4. nut null assersation(!!)  assure that this is not null
     narender = null
-    narender!!.printPerson()
+    //narender!!.printPerson()
 
     //5. use let library function available in any
     narender = null
