@@ -1,4 +1,5 @@
-### Developer API 
+# BlueOptima Assingment: Developer, Organization API with Rate Limit
+
 http://localhost:8080/api/v1/developers
 
 http://localhost:8080/api/v1/organizations
