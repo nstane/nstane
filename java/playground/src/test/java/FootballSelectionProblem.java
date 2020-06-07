@@ -10,7 +10,7 @@ public class FootballSelectionProblem {
         List list = getSelectionStatus(Arrays.asList(
                 Arrays.asList("Boateng", "6.1", "22", "1000", "1000"),
                 Arrays.asList("Kaka", "6", "22", "1", "1"),
-                Arrays.asList("Ronaldo", "5.8", "21", "120", "0"),
+                Arrays.asList("Ronaldo", "5.8", "21", "120", "2000"),
                 Arrays.asList("Suarez", "5.9", "20", "100", "1")
         ));
         list.forEach(System.out::println);
@@ -36,7 +36,7 @@ public class FootballSelectionProblem {
             }
         });
 
-        strikerOptional.ifPresent(e-> eligibleApplicants.remove(e));
+        strikerOptional.ifPresent(e -> eligibleApplicants.remove(e));
 
         Optional<Applicant> defenderOptional = eligibleApplicants.stream().filter(a -> a.defends >= 30).max((o1, o2) -> {
             if (o1.defends == o2.defends) {
